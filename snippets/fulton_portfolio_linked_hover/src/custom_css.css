@@ -1,0 +1,37 @@
+/* Image caption faux-link styles */
+.mf-pointer {
+  cursor: pointer !important;
+}
+
+/* image caption wrapper in the portfolio to be 100% of the image itself */
+.sqs-block-image .image-block-outer-wrapper.layout-caption-overlay .intrinsic .image-caption-wrapper,
+.sqs-block-image .image-block-outer-wrapper.layout-caption-overlay-hover .intrinsic .image-caption-wrapper{
+  box-sizing: border-box;
+  height: 100%;
+  text-align: center;
+  padding: 25% 10% 15%;
+  width: 100%;
+
+  /**
+  *
+  * NOTE: You may want to change this background color for the hover overlay.
+  *       This is meant only as a default.
+  *
+  **/
+  background-color: rgba(245, 245, 245, 0.9);
+}
+
+/* image caption text (in the portfolio pages) */
+.sqs-block-image .image-block-outer-wrapper.layout-caption-overlay .intrinsic .image-caption-wrapper p,
+.sqs-block-image .image-block-outer-wrapper.layout-caption-overlay-hover .intrinsic .image-caption-wrapper p,
+.sqs-block-image .image-block-outer-wrapper.layout-caption-overlay .intrinsic .image-caption-wrapper p a,
+.sqs-block-image .image-block-outer-wrapper.layout-caption-overlay-hover .intrinsic .image-caption-wrapper p a {
+  /**
+  *
+  * NOTE: You may want to change these text styles for the hover overlay.
+  *       These are meant only as a default.
+  *
+  **/
+  color: #222;
+  font-size: 1.2rem;
+}

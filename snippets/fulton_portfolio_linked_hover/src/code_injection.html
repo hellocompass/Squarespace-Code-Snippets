@@ -1,0 +1,36 @@
+<script type='text/javascript'>
+  ( function () {
+
+    function bindCaptionLinkListener () {
+      var wrappers = document.querySelectorAll( '.intrinsic' ),
+          i, anchor, caption, href;
+
+      // iterate over each porfolio item, and bind navigation
+      for ( i = 0; i < wrappers.length; i++ ) {
+
+        anchor = wrappers[i].querySelector( 'a' );
+        caption = wrappers[i].querySelector( '.image-caption-wrapper' );
+
+        // Ensure that this portfolio item is linked
+        if ( anchor ) {
+          // add class to make the cursor a pointing finger
+          caption.className = caption.className + ' compass-pointer';
+
+          // store href on caption
+          caption.setAttribute( 'data-href', anchor.getAttribute('href') )
+
+          // navigate on click
+          caption.addEventListener( 'click', function ( e ) {
+            window.location = e.currentTarget.getAttribute( 'data-href' );
+          });
+        }
+
+      }
+    }
+
+    document.addEventListener( 'DOMContentLoaded', function () {
+      bindCaptionLinkListener();
+    });
+
+  })();
+</script>
