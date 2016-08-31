@@ -1,36 +1,88 @@
 <script type='text/javascript'>
-  ( function () {
-
-    function bindCaptionLinkListener () {
-      var wrappers = document.querySelectorAll( '.intrinsic' ),
-          i, anchor, caption, href;
-
-      // iterate over each porfolio item, and bind navigation
-      for ( i = 0; i < wrappers.length; i++ ) {
-
-        anchor = wrappers[i].querySelector( 'a' );
-        caption = wrappers[i].querySelector( '.image-caption-wrapper' );
-
-        // Ensure that this portfolio item is linked
-        if ( anchor ) {
-          // add class to make the cursor a pointing finger
-          caption.className = caption.className + ' compass-pointer';
-
-          // store href on caption
-          caption.setAttribute( 'data-href', anchor.getAttribute('href') )
-
-          // navigate on click
-          caption.addEventListener( 'click', function ( e ) {
-            window.location = e.currentTarget.getAttribute( 'data-href' );
-          });
-        }
-
-      }
+// javascript from the tutorial here: http://callmenick.com/post/animated-resizing-header-on-scroll
+function init() {
+        window.addEventListener('scroll', function(e){
+            var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+                shrinkOn = 100,
+                header = document.querySelector("header");
+            if (distanceY > shrinkOn) {
+                classie.add(header,"smaller");
+              	
+            } else {
+                if (classie.has(header,"smaller")) {
+                    classie.remove(header,"smaller");
+                }
+            }
+        });
     }
+    window.onload = init();
 
-    document.addEventListener( 'DOMContentLoaded', function () {
-      bindCaptionLinkListener();
-    });
 
-  })();
+( function( window ) {
+
+'use strict';
+
+// class helper functions from bonzo https://github.com/ded/bonzo
+
+function classReg( className ) {
+  return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
+}
+
+// classList support for class management
+
+var hasClass, addClass, removeClass;
+
+if ( 'classList' in document.documentElement ) {
+  hasClass = function( elem, c ) {
+    return elem.classList.contains( c );
+  };
+  addClass = function( elem, c ) {
+    elem.classList.add( c );
+  };
+  removeClass = function( elem, c ) {
+    elem.classList.remove( c );
+  };
+}
+else {
+  hasClass = function( elem, c ) {
+    return classReg( c ).test( elem.className );
+  };
+  addClass = function( elem, c ) {
+    if ( !hasClass( elem, c ) ) {
+      elem.className = elem.className + ' ' + c;
+    }
+  };
+  removeClass = function( elem, c ) {
+    elem.className = elem.className.replace( classReg( c ), ' ' );
+  };
+}
+
+function toggleClass( elem, c ) {
+  var fn = hasClass( elem, c ) ? removeClass : addClass;
+  fn( elem, c );
+}
+
+var classie = {
+  // full names
+  hasClass: hasClass,
+  addClass: addClass,
+  removeClass: removeClass,
+  toggleClass: toggleClass,
+  // short names
+  has: hasClass,
+  add: addClass,
+  remove: removeClass,
+  toggle: toggleClass
+};
+
+// transport
+if ( typeof define === 'function' && define.amd ) {
+  // AMD
+  define( classie );
+} else {
+  // browser global
+  window.classie = classie;
+}
+
+})( window );
 </script>
