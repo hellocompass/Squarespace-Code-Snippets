@@ -2,8 +2,8 @@
 A collection of code snippets to make your Squarespace sites even better.
 
 ## Contents
-### [Fulton Template Portfolio Linked Hover Effect](snippets/fulton_portfolio_linked_hover/README.md)
-![Fulton Template Portfolio Hover Effect](snippets/fulton_portfolio_linked_hover/preview.gif?raw=true)
+### [Resize Header On Scroll](snippets/resize-header-on-scroll/README.md)
+![Fulton Template Portfolio Hover Effect](snippets/resize-header-on-scroll/ResizeHeaderOnScroll2016.gif?raw=true)
 
 ## Contributing
 
