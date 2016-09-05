@@ -1,0 +1,26 @@
+/* I only use this on bigger screens to save real estate on smaller ones. I made this for the Bedford Theme. Other themes sometime use different ID and class names. */
+
+@media only screen and (min-width: 641px){
+#header {
+	position: fixed; /*this keeps your header visible even on scroll.*/
+	transition: all 0.5s;
+}
+#logoImage img, #headerNav nav a {
+  transition: all 0.5s;
+}
+.banner-thumbnail-wrapper {
+	margin-top: 83px; /*this keeps the banner from being hidden behind the fixed header, should be equal to the height of the fixed header.*/
+}
+header.smaller {
+	height: 65px; /*this is the height you want your header to be after scrolling.
+	opacity: 0.95; //this is the opacity of your header after scrolling. Delete it or set it to 1 if you do not want your header to have any transparancy after scrolling.
+	box-shadow:0px 0px 8px #e5e5e5;//set this if you'd like your header to have a little bottom drop shadow after scrolling.*/
+}
+#header.smaller #logoImage img {
+	width: 50%;	/*percentage of original size you want your logo to be*/
+    height: auto;
+} 
+#header.smaller #headerNav nav a {
+	font-size: 12.5px;/*set this if you want the navigation items to change size on scroll.*/
+}
+}
