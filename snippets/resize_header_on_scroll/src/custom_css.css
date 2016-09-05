@@ -12,9 +12,9 @@
 	margin-top: 83px; /*this keeps the banner from being hidden behind the fixed header, should be equal to the height of the fixed header.*/
 }
 header.smaller {
-	height: 65px; /*this is the height you want your header to be after scrolling.
-	opacity: 0.95; //this is the opacity of your header after scrolling. Delete it or set it to 1 if you do not want your header to have any transparancy after scrolling.
-	box-shadow:0px 0px 8px #e5e5e5;//set this if you'd like your header to have a little bottom drop shadow after scrolling.*/
+	height: 65px; /*this is the height you want your header to be after scrolling.*/
+	opacity: 0.95; /*this is the opacity of your header after scrolling. Delete it or set it to 1 if you do not want your header to have any transparancy after scrolling.*/
+	box-shadow:0px 0px 8px #e5e5e5;/*set this if you'd like your header to have a little bottom drop shadow after scrolling.*/
 }
 #header.smaller #logoImage img {
 	width: 50%;	/*percentage of original size you want your logo to be*/
